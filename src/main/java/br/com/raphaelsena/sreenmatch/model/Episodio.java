@@ -31,7 +31,26 @@ public class Episodio {
         } catch (DateTimeParseException ex) {
             this.dataLancamento = null;
         }
+    }
 
+    public Integer getTemporada() {
+        return temporada;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public Integer getNumeroEpisodio() {
+        return numeroEpisodio;
+    }
+
+    public Double getAvaliacao() {
+        return avaliacao;
+    }
+
+    public LocalDate getDataLancamento() {
+        return dataLancamento;
     }
 
     @Override
