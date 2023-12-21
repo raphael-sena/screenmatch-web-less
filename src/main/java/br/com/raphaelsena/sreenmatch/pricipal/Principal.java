@@ -3,6 +3,7 @@ package br.com.raphaelsena.sreenmatch.pricipal;
 import br.com.raphaelsena.sreenmatch.model.DadosEpisodios;
 import br.com.raphaelsena.sreenmatch.model.DadosSerie;
 import br.com.raphaelsena.sreenmatch.model.DadosTemporada;
+import br.com.raphaelsena.sreenmatch.model.Episodio;
 import br.com.raphaelsena.sreenmatch.service.ConsumoApi;
 import br.com.raphaelsena.sreenmatch.service.ConverteDados;
 
@@ -49,5 +50,14 @@ public class Principal {
                 .sorted(Comparator.comparing(DadosEpisodios::avaliacao).reversed())
                 .limit(5)
                 .forEach(System.out::println);
+
+        System.out.println();
+
+        List<Episodio> episodios = temporadas.stream()
+                .flatMap(t -> t.episodios().stream()
+                        .map(d -> new Episodio(t.numero(), d))
+                ).collect(Collectors.toList());
+
+        episodios.forEach(System.out::println);
     }
 }
