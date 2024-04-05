@@ -1,4 +1,4 @@
-package br.com.raphaelsena.sreenmatch.service;
+package br.com.raphaelsena.screenmatch.service;
 
 import java.io.IOException;
 import java.net.URI;

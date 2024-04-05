@@ -1,4 +1,4 @@
-package br.com.raphaelsena.sreenmatch;
+package br.com.raphaelsena.screenmatch;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

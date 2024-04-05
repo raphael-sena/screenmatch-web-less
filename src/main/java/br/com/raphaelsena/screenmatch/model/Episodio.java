@@ -1,4 +1,4 @@
-package br.com.raphaelsena.sreenmatch.model;
+package br.com.raphaelsena.screenmatch.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;

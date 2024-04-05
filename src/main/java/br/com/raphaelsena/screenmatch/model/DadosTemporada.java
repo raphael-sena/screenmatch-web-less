@@ -1,4 +1,4 @@
-package br.com.raphaelsena.sreenmatch.model;
+package br.com.raphaelsena.screenmatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

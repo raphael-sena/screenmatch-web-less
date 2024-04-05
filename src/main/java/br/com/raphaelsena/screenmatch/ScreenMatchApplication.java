@@ -1,6 +1,6 @@
-package br.com.raphaelsena.sreenmatch;
+package br.com.raphaelsena.screenmatch;
 
-import br.com.raphaelsena.sreenmatch.pricipal.Principal;
+import br.com.raphaelsena.screenmatch.pricipal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
