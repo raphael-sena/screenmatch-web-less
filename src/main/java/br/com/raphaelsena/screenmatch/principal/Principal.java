@@ -1,4 +1,4 @@
-package br.com.raphaelsena.screenmatch.pricipal;
+package br.com.raphaelsena.screenmatch.principal;
 
 import br.com.raphaelsena.screenmatch.model.DadosSerie;
 import br.com.raphaelsena.screenmatch.model.DadosTemporada;
