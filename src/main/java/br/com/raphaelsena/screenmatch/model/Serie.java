@@ -1,6 +1,8 @@
 package br.com.raphaelsena.screenmatch.model;
 
 import br.com.raphaelsena.screenmatch.model.enums.Categoria;
+import br.com.raphaelsena.screenmatch.service.ConsultaChatGPT;
+import br.com.raphaelsena.screenmatch.service.ConsultaMyMemory;
 
 import java.util.OptionalDouble;
 
@@ -14,14 +16,14 @@ public class Serie {
     private String poster;
     private String sinopse;
 
-    public Serie(DadosSerie dadosSerie) {
+    public Serie(DadosSerie dadosSerie){
         this.titulo = dadosSerie.titulo();
         this.totalTemporadas = dadosSerie.totalTemporadas();
-        this.avaliacao = OptionalDouble.of(Double.valueOf(dadosSerie.avaliacao())).orElse(0.0);
+        this.avaliacao = OptionalDouble.of(Double.valueOf(dadosSerie.avaliacao())).orElse(0);
         this.genero = Categoria.getCategoria(dadosSerie.genero().split(",")[0].trim());
         this.atores = dadosSerie.atores();
         this.poster = dadosSerie.poster();
-        this.sinopse = dadosSerie.sinopse();
+        this.sinopse = ConsultaMyMemory.obterTraducao(dadosSerie.sinopse()).trim();
     }
 
     public String getTitulo() {
