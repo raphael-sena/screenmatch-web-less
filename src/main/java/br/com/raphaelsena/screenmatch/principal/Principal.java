@@ -2,12 +2,15 @@ package br.com.raphaelsena.screenmatch.principal;
 
 import br.com.raphaelsena.screenmatch.model.DadosSerie;
 import br.com.raphaelsena.screenmatch.model.DadosTemporada;
+import br.com.raphaelsena.screenmatch.model.Serie;
 import br.com.raphaelsena.screenmatch.service.ConsumoApi;
 import br.com.raphaelsena.screenmatch.service.ConverteDados;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Principal {
 
@@ -43,7 +46,7 @@ public class Principal {
                     buscarEpisodioPorSerie();
                     break;
                 case 3:
-                    buscarSeriesBuscadas();
+                    listarSeriesBuscadas();
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -80,7 +83,15 @@ public class Principal {
         temporadas.forEach(System.out::println);
     }
 
-    private void buscarSeriesBuscadas() {
-        dadosSeries.forEach(System.out::println);
+    private void listarSeriesBuscadas() {
+
+        List<Serie> series = new ArrayList<>();
+        series = dadosSeries.stream()
+                .map(s -> new Serie(s))
+                .collect(Collectors.toList());
+
+        series.stream()
+                .sorted(Comparator.comparing(Serie::getGenero))
+                .forEach(System.out::println);
     }
 }
